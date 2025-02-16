@@ -1,8 +1,7 @@
 Invoke-Expression (&starship init powershell)
-Import-Module Terminal-Icons
-Import-Module scoop-completion
-Import-Module posh-git
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+Import-Module Terminal-Icons
+# Import-Module posh-git
 
 # PSReadLine
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
@@ -23,6 +22,9 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
         }
 }
+
+# Scoop auto completion
+Import-Module scoop-completion
 
 # Aliases
 Set-Alias g git
