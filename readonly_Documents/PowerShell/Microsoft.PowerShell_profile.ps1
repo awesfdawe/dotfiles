@@ -1,7 +1,7 @@
 Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 Import-Module Terminal-Icons
-# Import-Module posh-git
+Import-Module posh-git
 
 # PSReadLine
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
